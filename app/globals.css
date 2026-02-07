@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+/* Valentine's theme: romantic, funky, cute */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff5f8;
+  --foreground: #4a1942;
+  --valentine-pink: #ff85a2;
+  --valentine-rose: #e91e63;
+  --valentine-red: #d4145a;
+  --valentine-soft: #ffb3c6;
+  --valentine-white: #fff9fb;
+  --valentine-glow: #ff6b9d;
 }
 
 @theme inline {
@@ -12,15 +19,77 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Heart trail particle: fade out and shrink over 1.5s */
+.heart-particle {
+  animation: heart-fade 1.5s ease-out forwards;
+  opacity: 1;
+}
+@keyframes heart-fade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: hide default cursor when using custom heart trail on desktop */
+@media (hover: hover) and (pointer: fine) {
+  .valentine-page {
+    cursor: none;
+  }
+}
+
+/* Cute floating animation for teddy & cat decorations */
+@keyframes cute-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.cute-float {
+  animation: cute-float 3s ease-in-out infinite;
+}
+
+/* Pinterest-style masonry for "Things I love" page — two columns */
+.things-masonry {
+  column-gap: 1.25rem;
+  column-count: 1;
+}
+.things-masonry .pin-card {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 640px) {
+  .things-masonry {
+    column-count: 2;
+  }
 }

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "node -e \"const fs=require('fs');const p='.next';fs.existsSync(p)&&fs.rmSync(p,{recursive:true});console.log('Cache cleared');\""
   },
   "dependencies": {
     "next": "16.1.6",
