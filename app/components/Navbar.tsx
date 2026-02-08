@@ -43,6 +43,12 @@ export default function Navbar() {
               Dashboard
             </Link>
             <Link
+              href="/dashboard#some-photos"
+              className="text-white/90 transition-colors hover:text-white hover:underline"
+            >
+              Some Photos
+            </Link>
+            <Link
               href="/dashboard#memories"
               className="text-white/90 transition-colors hover:text-white hover:underline"
             >
@@ -102,6 +108,13 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Dashboard
+            </Link>
+            <Link
+              href="/dashboard#some-photos"
+              className="rounded-md px-4 py-2 text-[#4a1942] transition-colors hover:bg-[#ffb3c6]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Some Photos
             </Link>
             <Link
               href="/dashboard#memories"
