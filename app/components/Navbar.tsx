@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="relative w-full overflow-hidden">
+    <nav className="relative z-30 w-full overflow-visible">
       {/* Background image with romantic overlay */}
       <div
         className="relative h-64 bg-cover bg-center bg-no-repeat md:h-80"
