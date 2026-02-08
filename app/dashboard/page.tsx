@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import MemoriesSection from "../components/MemoriesSection";
+import PhotoCarousel from "../components/PhotoCarousel";
 
 /**
  * Dashboard page: Appears after completing all Valentine questions.
@@ -50,6 +51,7 @@ export default function DashboardPage() {
           <span className="text-2xl" aria-hidden>🐱</span>
         </div>
 
+        <PhotoCarousel />
         <MemoriesSection />
       </main>
     </div>
